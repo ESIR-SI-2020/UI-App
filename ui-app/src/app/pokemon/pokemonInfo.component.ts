@@ -1,5 +1,4 @@
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { Pokemon } from './../pokemon';
 import { Component, OnInit, Input } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import { switchMap } from 'rxjs/operators';
@@ -10,7 +9,7 @@ import { Observable } from 'rxjs';
     templateUrl: './pokemonInfo.component.html',
 })
 export class PokemonInfoComponent implements OnInit {
-
+    isLoading: boolean;
     pokemon: any;
 
     constructor(
@@ -20,17 +19,19 @@ export class PokemonInfoComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-
-        let pokeName: string
-        this.route.paramMap.subscribe(paramMap =>
-            pokeName = paramMap.get('name')
-        )
-
-        this.pokemon = this.service.getPokemonDetails(pokeName);
-        console.log(this.service.getPokemonDetails(pokeName))
-
-        //TODO: ici le blème
-        console.log(    Object.keys(this.pokemon)[0] )
-        console.log( JSON.parse(JSON.stringify(this.pokemon)))
+        try {
+            this.isLoading = true;
+            let pokeName: string
+            this.route.paramMap.subscribe(paramMap =>
+                pokeName = paramMap.get('name')
+            )
+            this.service.getPokemonDetails(pokeName).then(data => this.pokemon = data);
+        } catch (error) {
+            console.error(error)
+        }
+        finally {
+            this.isLoading = false
+        }
+        
     }
 }

@@ -15,8 +15,8 @@ import en from '@angular/common/locales/en';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonInfoComponent } from './pokemon/pokemonInfo.component';
 import { PokemonService } from './pokemon.service';
-import { SpinnerComponent } from './spinner/spinner.component';
 import { LoginComponent } from './login/login.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 registerLocaleData(en);
 
@@ -26,8 +26,8 @@ registerLocaleData(en);
     UserComponent,
     PokemonComponent,
     PokemonInfoComponent,
-    SpinnerComponent,
-    LoginComponent
+    LoginComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

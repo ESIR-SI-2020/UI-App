@@ -39,6 +39,7 @@ export class PokemonService {
     this.pokemon =  this.httpCaller.call<any>(httpCallOptions).then((poke) => {
       return poke.species
     });
+    console.log(this.pokemon)
     return this.pokemon
   }
 }
