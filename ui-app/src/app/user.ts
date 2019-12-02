@@ -1,15 +1,14 @@
 export interface User {
-    name: String;
+    username: String;
     password: String;
     email: String;
-    bio: String;
     address: {
         postalCode: string;
         street: string;
         streetNumber: number;
         complement: String;
     };
-    friends: Array<User>;
+    friends: Array<string>; //list des @emails des friends
 }
 
 
