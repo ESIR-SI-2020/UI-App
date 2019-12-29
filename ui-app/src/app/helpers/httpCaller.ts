@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpCallOptions } from './httpCallOptions';
+import { HttpCallOptions } from '../models/httpCallOptions';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -9,7 +9,6 @@ import { Injectable } from '@angular/core';
 )
 export class HttpCaller {
 
-  baseUrl = 'https://pokeapi.co/api/v2';
   defaultHeaders = new HttpHeaders({
     // "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
   });
@@ -17,19 +16,15 @@ export class HttpCaller {
   constructor(private http: HttpClient, private router: Router) { }
 
   async call<T>(options: HttpCallOptions): Promise<T> {
-    let completeUrl = this.baseUrl.concat(options.url);
-
     let completeOptions = {
       body: options.body ? JSON.parse(options.body) : undefined,
       headers: options.headers ? options.headers : this.defaultHeaders,
       responseType: 'json' as 'json' // hack for weird typing
     };
 
-    let response: Promise<T> = this.http.request<T>(options.method, completeUrl, completeOptions).toPromise()
+    let response: Promise<T> = this.http.request<T>(options.method, options.url, completeOptions).toPromise()
       // .catch<T>(error => this.handleError(error));
       .catch<T>(this.handleError.bind(this));
-
-
     return await response;
   }
 

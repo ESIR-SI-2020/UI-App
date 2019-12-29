@@ -1,0 +1,145 @@
+{
+    "users": [
+        {   
+            "id": 1,
+            "username" : "username1",
+            "password" : "password1",
+            "email" : "email1",
+            "address" : {
+                "postalCode" : "35000",
+                "street" : "rue de Rennes",
+                "complement" : "appart 567"
+            },
+            "friends ": [
+                {
+                    "email": "email2"
+                },
+                {
+                    "email": "email3"
+                },
+                {
+                    "email": "email4"
+                }
+            ],
+            "articles": [
+                {
+                    "id": "article1"
+                },
+                {
+                    "id": "article2"
+                },
+                {
+                    "id": "article3"
+                }
+            ],
+
+            "sharedArticles": []
+        },
+        {
+            "id": 2,
+            "username" : "username2",
+            "password" : "password2",
+            "email" : "email2",
+            "address" : {
+                "postalCode" : "35000",
+                "street" : "rue de Rennes1",
+                "complement" : "appart 5671"
+            },
+            "friends ": [
+                {
+                    "email": "email1"
+                },
+                {
+                    "email": "email3"
+                },
+                {
+                    "email": "email4"
+                }
+            ],
+            "articles": [
+                {
+                    "id": "article3"
+                },
+                {
+                    "id": "article4"
+                }
+            ],
+
+            "sharedArticles": [
+                {
+                    "id": "article4"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "username" : "username3",
+            "password" : "password3",
+            "email" : "email3",
+            "address" : {
+                "postalCode" : "350300",
+                "street" : "rue de Rennes2",
+                "complement" : "appart 5672"
+            },
+            "friends ": [
+                {
+                    "email": "email2"
+                },
+                {
+                    "email": "email1"
+                },
+                {
+                    "email": "email4"
+                }
+            ],
+            "articles": [
+                {
+                    "id": "article5"
+                },
+                {
+                    "id": "article6"
+                },
+                {
+                    "id": "article7"
+                }
+            ],
+
+            "sharedArticles": [
+                {
+                    "id": "article7"
+                }
+            ]
+        }
+    ],
+
+    "articles": [
+        {
+            "id": "article1",
+            "title": "title1",
+            "url": "url (add real url)", 
+            "owner": "email1",
+            "tags": []
+        },
+        {
+            "id": "article2",
+            "title": "title2",
+            "url": "url (add real url)", 
+            "owner": "email2",
+            "tags": []
+        },
+        {
+            "id": "article3",
+            "title": "title3",
+            "url": "url (add real url)", 
+            "owner": "email3",
+            "tags": []
+        },
+        {
+            "id": "article4",
+            "title": "title4",
+            "url": "url (add real url)", 
+            "owner": "email1",
+            "tags": []
+        }
+    ]
+}

@@ -1,15 +1,16 @@
-import { HttpCaller } from './httpCaller';
-import { HttpCallOptions } from './httpCallOptions';
+import { HttpCaller } from '../helpers/httpCaller';
+import { HttpCallOptions } from '../models/httpCallOptions';
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
-import { Pokemon } from './pokemon';
-import { map } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { environment } from '../../environments/environment';
+
 
 const httpOptions = new HttpHeaders({
   // "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
   // "x-rapidapi-key": "ff942a6c0emshac1c8821c82f00bp11636cjsnc076cd832ae2"
 })
+
+const baseUrl = `${environment.pokemonUrl}`;
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class PokemonService {
   ) { }
 
   findAll() {
-    const httpCallOptions: HttpCallOptions = { url: "/pokemon", method: "get", headers: httpOptions } as HttpCallOptions;
+    const httpCallOptions: HttpCallOptions = { url: baseUrl+ "/pokemon", method: "get", headers: httpOptions } as HttpCallOptions;
     this.pokemons = this.httpCaller.call<any>(httpCallOptions).then((item) => {
       return item.results;
     });
@@ -35,11 +36,10 @@ export class PokemonService {
   }
 
   getPokemonDetails(pokemonName: string){
-    const httpCallOptions: HttpCallOptions = { url: "/pokemon"+"/"+pokemonName, method: "get", headers: httpOptions } as HttpCallOptions;
+    const httpCallOptions: HttpCallOptions = { url: baseUrl+ "/pokemon"+"/"+pokemonName, method: "get", headers: httpOptions } as HttpCallOptions;
     this.pokemon =  this.httpCaller.call<any>(httpCallOptions).then((poke) => {
       return poke.species
     });
-    console.log(this.pokemon)
     return this.pokemon
   }
 }

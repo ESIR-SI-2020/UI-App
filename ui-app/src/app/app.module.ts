@@ -1,6 +1,6 @@
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { HttpCallOptions } from './httpCallOptions';
-import { HttpCaller } from './httpCaller';
+import { HttpCallOptions } from './models/httpCallOptions';
+import { HttpCaller } from './helpers/httpCaller';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,9 +14,10 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonInfoComponent } from './pokemon/pokemonInfo.component';
-import { PokemonService } from './pokemon.service';
+import { PokemonService } from './services/pokemon.service';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import {UserService} from './services/user.service'
 
 registerLocaleData(en);
 
@@ -47,7 +48,7 @@ registerLocaleData(en);
     HttpClient,
     HttpCaller,
     PokemonService,
-
+    UserService
 
   ],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
-import { PokemonService } from '../pokemon.service';
+import { PokemonService } from '../services/pokemon.service';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 

@@ -1,7 +1,9 @@
-import { HttpCallOptions } from './../httpCallOptions';
-import { HttpCaller } from './../httpCaller';
+import { User } from '../models/user';
+import { HttpCallOptions } from '../models/httpCallOptions';
+import { HttpCaller } from '../helpers/httpCaller';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import {UserService} from '../services/user.service'
 
 
 @Component({
@@ -12,13 +14,24 @@ import { ActivatedRoute } from '@angular/router';
 
 export class UserComponent implements OnInit {
 
+  user: User
 
-  constructor(private httpCaller: HttpCaller,
+  constructor(private userService: UserService,
     private route: ActivatedRoute,
   ) { }
 
 
   ngOnInit() {
+
+    try{
+      let userId: string; //changer par l'Id
+      this.route.paramMap.subscribe(paramMap =>{
+        userId = paramMap.get('userId')
+      })
+      this.userService.getUserDetails(userId).then(data => this.user = data)
+    }catch(error){
+      console.error(error);
+    }
 
   }
 

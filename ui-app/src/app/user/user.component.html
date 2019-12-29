@@ -1,0 +1,10 @@
+<div *ngIf="user">
+    <h3 mat-line><strong>Username : </strong> {{ user.username}}</h3>
+    <h3 mat-line> <strong>Email : </strong> {{ user.email }} </h3>
+    <h3 mat-line> <strong>Adresse : </strong> {{ user.address }} </h3>
+    <h3 mat-line> <strong>Friends : </strong> 
+        <div *ngFor="let friend of {{user.friends}}">
+            <h3 mat-line> {{ user.email }} </h3>
+        </div>
+    </h3>
+</div>

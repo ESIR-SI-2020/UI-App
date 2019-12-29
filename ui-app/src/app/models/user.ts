@@ -1,4 +1,5 @@
-export interface User {
+export class User {
+    id: String;
     username: String;
     password: String;
     email: String;
@@ -8,7 +9,7 @@ export interface User {
         streetNumber: number;
         complement: String;
     };
-    friends: Array<string>; //list des @emails des friends
+    friends?: Array<string>; //list des @emails des friends
 }
 
 

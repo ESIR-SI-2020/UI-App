@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpCaller } from '../httpCaller';
+import { HttpCaller } from '../helpers/httpCaller';
 import { ActivatedRoute } from '@angular/router';
-import { PokemonService } from '../pokemon.service';
+import { PokemonService } from '../services/pokemon.service';
 
 
 @Component({
