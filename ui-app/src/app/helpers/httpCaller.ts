@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpCallOptions } from '../models/httpCallOptions';
-import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
@@ -12,6 +12,7 @@ export class HttpCaller {
   defaultHeaders = new HttpHeaders({
     // "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
   });
+  defaultParams = new HttpParams({});
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -19,6 +20,7 @@ export class HttpCaller {
     let completeOptions = {
       body: options.body ? JSON.parse(options.body) : undefined,
       headers: options.headers ? options.headers : this.defaultHeaders,
+      params: options.params ? options.params: this.defaultParams,
       responseType: 'json' as 'json' // hack for weird typing
     };
 

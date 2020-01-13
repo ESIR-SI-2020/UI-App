@@ -1,5 +1,5 @@
+import { AuthenticationService } from './services/authentication.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { HttpCallOptions } from './models/httpCallOptions';
 import { HttpCaller } from './helpers/httpCaller';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,17 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatInputModule, MatListModule, MatToolbarModule,  MatMenuModule, MatIconModule } from '@angular/material';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { MatCardModule, MatInputModule, MatListModule, MatToolbarModule,  MatMenuModule, MatIconModule, MatSidenavModule } from '@angular/material';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonInfoComponent } from './pokemon/pokemonInfo.component';
 import { PokemonService } from './services/pokemon.service';
-import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import {UserService} from './services/user.service'
+import {UserService} from './services/user.service';
 
 registerLocaleData(en);
 
@@ -27,8 +26,7 @@ registerLocaleData(en);
     UserComponent,
     PokemonComponent,
     PokemonInfoComponent,
-    LoginComponent,
-    NotfoundComponent
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,14 +40,16 @@ registerLocaleData(en);
     MatIconModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
     FormsModule
   ],
   providers: [
     HttpClient,
     HttpCaller,
     PokemonService,
-    UserService
-
+    UserService,
+    AuthenticationService,
   ],
   bootstrap: [AppComponent]
 })

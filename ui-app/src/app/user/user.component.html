@@ -1,10 +1,17 @@
 <div *ngIf="user">
     <h3 mat-line><strong>Username : </strong> {{ user.username}}</h3>
     <h3 mat-line> <strong>Email : </strong> {{ user.email }} </h3>
-    <h3 mat-line> <strong>Adresse : </strong> {{ user.address }} </h3>
-    <h3 mat-line> <strong>Friends : </strong> 
-        <div *ngFor="let friend of {{user.friends}}">
-            <h3 mat-line> {{ user.email }} </h3>
-        </div>
-    </h3>
+    <h3 mat-line> <strong>Adresse : </strong> </h3>
+    <h3 mat-line>  {{ user.address.postalCode }} </h3>
+    <h3 mat-line>  {{ user.address.streetNumber }} </h3>
+    <h3 mat-line>  {{ user.address.street}} </h3>
+    <h3 mat-line>  {{ user.address.complement }} </h3>
+    <h3 mat-line> <strong>Friends : </strong> </h3>
+    <div *ngIf='user.friends'>
+        <mat-list *ngIf="!isLoading && !error">
+            <mat-list-item *ngFor="let friend of user.friends">   
+                <h3 mat-line>  {{ friend }} </h3>
+            </mat-list-item>
+          </mat-list>
+    </div>
 </div>

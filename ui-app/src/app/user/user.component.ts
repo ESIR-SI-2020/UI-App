@@ -14,7 +14,7 @@ import {UserService} from '../services/user.service'
 
 export class UserComponent implements OnInit {
 
-  user: User
+  user: any
 
   constructor(private userService: UserService,
     private route: ActivatedRoute,
@@ -26,9 +26,11 @@ export class UserComponent implements OnInit {
     try{
       let userId: string; //changer par l'Id
       this.route.paramMap.subscribe(paramMap =>{
-        userId = paramMap.get('userId')
+        userId = paramMap.get('username')
+        console.log("userID: "+userId);
       })
       this.userService.getUserDetails(userId).then(data => this.user = data)
+      console.log("user: "+this.user);
     }catch(error){
       console.error(error);
     }

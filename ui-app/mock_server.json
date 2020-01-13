@@ -8,6 +8,7 @@
             "address" : {
                 "postalCode" : "35000",
                 "street" : "rue de Rennes",
+                "streetNumber":"58",
                 "complement" : "appart 567"
             },
             "friends ": [
@@ -43,6 +44,7 @@
             "address" : {
                 "postalCode" : "35000",
                 "street" : "rue de Rennes1",
+                "streetNumber":"58",
                 "complement" : "appart 5671"
             },
             "friends ": [
@@ -79,6 +81,7 @@
             "address" : {
                 "postalCode" : "350300",
                 "street" : "rue de Rennes2",
+                "streetNumber":"58",
                 "complement" : "appart 5672"
             },
             "friends ": [
@@ -141,5 +144,8 @@
             "owner": "email1",
             "tags": []
         }
-    ]
+    ],
+    "authenticate":{
+        "token": "bklsbrfudsbbefnfnfe"
+    }
 }
