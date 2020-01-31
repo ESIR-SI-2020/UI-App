@@ -20,5 +20,11 @@ pipeline {
         sh 'npm build --prod'
       }
     }
+      stage('Deploy') {
+            steps {
+                sh 'rm ../../apps/*'
+                sh 'cp ./dist/apps/* ../../apps/'
+            }
+        } 
   }
 }
