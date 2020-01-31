@@ -14,19 +14,17 @@ pipeline {
         sh 'npm install'
       }
     }
-
+    stage('Test'){
+      steps{
+        sh 'npm run-script test'
+      }
+    }
     stage('Build'){
       steps{
         sh 'npm build --prod'
       }
     }
 
-    stage('Test'){
-      steps{
-        sh 'npm run-script test'
-      }
-    }
-    
 
     stage ('build docker image'){
       steps{
