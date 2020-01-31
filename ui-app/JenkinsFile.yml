@@ -20,19 +20,5 @@ pipeline {
         sh 'npm build --prod'
       }
     }
-
-
-    stage ('build docker image'){
-      steps{
-        sh 'docker build -t ui-app-image .'
-      }
-    }
-
-    stage('deploy'){
-      steps{
-        sh 'docker run --name ui-app -d -p 8090:80 ui-app-image'
-      }
-    }
-     
   }
 }
