@@ -26,5 +26,4 @@ export class UserService {
     return this.httpCaller.call<User[]>(httpCallOptions);
   }
 
-
 }

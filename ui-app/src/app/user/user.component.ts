@@ -23,6 +23,12 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
 
+    this.renderUserDetails();
+
+  }
+
+
+  renderUserDetails(){
     try{
       let userId: string; //changer par l'Id
       this.route.paramMap.subscribe(paramMap =>{
@@ -34,7 +40,7 @@ export class UserComponent implements OnInit {
     }catch(error){
       console.error(error);
     }
-
   }
+
 
 }

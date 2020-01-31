@@ -12,6 +12,7 @@ export class HttpCaller {
   defaultHeaders = new HttpHeaders({
     // "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
   });
+
   defaultParams = new HttpParams({});
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -25,7 +26,6 @@ export class HttpCaller {
     };
 
     let response: Promise<T> = this.http.request<T>(options.method, options.url, completeOptions).toPromise()
-      // .catch<T>(error => this.handleError(error));
       .catch<T>(this.handleError.bind(this));
     return await response;
   }

@@ -1,4 +1,3 @@
-import { AuthenticationService } from './services/authentication.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpCaller } from './helpers/httpCaller';
 import { BrowserModule } from '@angular/platform-browser';
@@ -48,8 +47,7 @@ registerLocaleData(en);
     HttpClient,
     HttpCaller,
     PokemonService,
-    UserService,
-    AuthenticationService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

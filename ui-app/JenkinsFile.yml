@@ -19,7 +19,25 @@ pipeline {
 
     stage('Build'){
       steps{
-        sh 'npm build'
+        sh 'npm run-script build --prod'
+      }
+    }
+
+    stage('Test'){
+      steps{
+        sh 'ng run-script test'
+      }
+    }
+    
+    stage ('build docker image'){
+      steps{
+        sh 'docker build -t ui-app-image .'
+      }
+    }
+
+    stage('deploy'){
+      steps{
+        sh 'docker run --name ui-app -d -p 8090:80 ui-app-image'
       }
     }
      
