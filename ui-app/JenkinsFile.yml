@@ -17,7 +17,7 @@ pipeline {
 
     stage('Build'){
       steps{
-        sh 'npm run-script build --prod'
+        sh 'npm build --prod'
       }
     }
 
@@ -27,6 +27,7 @@ pipeline {
       }
     }
     
+
     stage ('build docker image'){
       steps{
         sh 'docker build -t ui-app-image .'
