@@ -23,7 +23,7 @@ pipeline {
 
     stage('Test'){
       steps{
-        sh 'ng test'
+        sh 'ng run-script test'
       }
     }
     
