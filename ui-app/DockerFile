@@ -1,4 +1,4 @@
 FROM nginx:1.17.1-alpine
 
 COPY /dist/ui-app /usr/share/nginx/html
-EXPOSE 4500
+EXPOSE 80
