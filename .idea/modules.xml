@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DomainAndDatabases/core.iml" filepath="$PROJECT_DIR$/DomainAndDatabases/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DomainAndDatabases/domain/domain.iml" filepath="$PROJECT_DIR$/DomainAndDatabases/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DomainAndDatabases/elastic-search/elastic-search.iml" filepath="$PROJECT_DIR$/DomainAndDatabases/elastic-search/elastic-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DomainAndDatabases/kafka/kafka.iml" filepath="$PROJECT_DIR$/DomainAndDatabases/kafka/kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/project.iml" filepath="$PROJECT_DIR$/.idea/project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Queries/readapis.iml" filepath="$PROJECT_DIR$/Queries/readapis.iml" />
+    </modules>
+  </component>
+</project>
