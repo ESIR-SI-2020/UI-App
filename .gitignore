@@ -1,0 +1,10 @@
+/dist/
+/bazel-out
+/integration/bazel/bazel-*
+*.log
+node_modules
+.idea/
+modules/.settings
+modules/.vscode
+npm-debug.log
+yarn-error.log
