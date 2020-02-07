@@ -16,6 +16,8 @@ import { PokemonInfoComponent } from './pokemon/pokemonInfo.component';
 import { PokemonService } from './services/pokemon.service';
 import { NotfoundComponent } from './notfound/notfound.component';
 import {UserService} from './services/user.service';
+import { ArticleComponent } from './article/article.component';
+import { articleService } from './services/article.service';
 
 registerLocaleData(en);
 
@@ -24,8 +26,10 @@ registerLocaleData(en);
     AppComponent,
     UserComponent,
     PokemonComponent,
+    ArticleComponent,
     PokemonInfoComponent,
     NotfoundComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,7 @@ registerLocaleData(en);
     HttpClient,
     HttpCaller,
     PokemonService,
+    articleService,
     UserService
   ],
   bootstrap: [AppComponent]

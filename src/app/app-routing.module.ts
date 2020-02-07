@@ -1,4 +1,5 @@
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { ArticleComponent } from './article/article.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PokemonInfoComponent } from './pokemon/pokemonInfo.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
   {path: 'pokemon', component: PokemonInfoComponent},
   {path: 'pokemons', component: PokemonComponent},
   {path : 'notfound', component : NotfoundComponent},
-  {path: '', component: PokemonComponent},
+  {path: '', component: ArticleComponent},
   //otherwise redirect to login page
   {path: '**', redirectTo:''}
 ];
